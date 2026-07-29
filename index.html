@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Diamantes Capone | Recarga Free Fire</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #080808;
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111111, #1c1c1c);
+      padding: 18px 20px;
+      border-bottom: 1px solid #292929;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #00d9ff;
+    }
+
+    .support-btn {
+      background: #00d9ff;
+      color: #000;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 55px 20px 35px;
+      background:
+        radial-gradient(circle at top, #14333b 0%, #080808 55%);
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 7vw, 58px);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      color: #00d9ff;
+    }
+
+    .hero p {
+      color: #cfcfcf;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .section-title h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #aaa;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .package {
+      background: linear-gradient(145deg, #161616, #0e0e0e);
+      border: 1px solid #292929;
+      border-radius: 16px;
+      padding: 25px 18px;
+      text-align: center;
+      position: relative;
+      transition: 0.25s;
+    }
+
+    .package:hover {
+      transform: translateY(-5px);
+      border-color: #00d9ff;
+    }
+
+    .package.popular {
+      border: 2px solid #00d9ff;
+    }
+
+    .badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00d9ff;
+      color: #000;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .diamond {
+      font-size: 45px;
+      margin-bottom: 12px;
+    }
+
+    .package h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .bonus {
+      color: #00e676;
+      font-size: 14px;
+      min-height: 20px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 27px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .buy-btn {
+      width: 100%;
+      border: none;
+      background: #00d9ff;
+      color: #000;
+      padding: 13px;
+      border-radius: 9px;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .buy-btn:hover {
+      background: #ffffff;
+    }
+
+    .order-section {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .card {
+      background: #111111;
+      border: 1px solid #292929;
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 7px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px;
+      background: #080808;
+      border: 1px solid #333;
+      color: #fff;
+      border-radius: 8px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #00d9ff;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      border: none;
+      border-radius: 9px;
+      background: #00e676;
+      color: #000;
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .summary {
+      background: #080808;
+      border-radius: 10px;
+      padding: 18px;
+      margin-top: 15px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #242424;
+      gap: 15px;
+    }
+
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .total {
+      font-size: 22px;
+      font-weight: bold;
+      color: #00d9ff;
+    }
+
+    .steps {
+      margin-top: 55px;
+      text-align: center;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .step {
+      background: #111;
+      padding: 25px 15px;
+      border-radius: 12px;
+      border: 1px solid #292929;
+    }
+
+    .step-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 7px;
+    }
+
+    .notice {
+      margin-top: 40px;
+      padding: 18px;
+      background: #211d0b;
+      border: 1px solid #5d4c0b;
+      border-radius: 10px;
+      color: #f4d35e;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .pix-info {
+      margin-top: 20px;
+      padding: 18px;
+      background: #071c12;
+      border: 1px solid #0d5c38;
+      border-radius: 10px;
+      color: #8ff0bd;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 30px 20px;
+      background: #050505;
+      border-top: 1px solid #222;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .packages {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .header-content {
+        flex-direction: column;
+      }
+
+      .packages,
+      .order-section,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+
+    <div class="logo">
+      💎 DIAMANTES <span>CAPONE</span>
+    </div>
+
+    <!-- ALTERE O NÚMERO ABAIXO -->
+    <a
+      class="support-btn"
+      href="https://wa.me/557598497875"
+      target="_blank"
+    >
+      💬 Atendimento
+    </a>
+
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <h1>
+    Compre seus <span>Diamantes</span>
+  </h1>
+
+  <p>
+    Escolha seu pacote, informe o ID da sua conta
+    e faça seu pedido diretamente pelo WhatsApp.
+  </p>
+
+</section>
+
+
+<main class="container">
+
+
+  <div class="section-title">
+
+    <h2>💎 Escolha seu pacote</h2>
+
+    <p>
+      Selecione a quantidade de diamantes que deseja receber.
+    </p>
+
+  </div>
+
+
+  <section class="packages">
+
+
+    <div class="package">
+
+      <div class="diamond">💎</div>
+
+      <h3>1.200 Diamantes</h3>
+
+      <div class="bonus">
+        &nbsp;
+      </div>
+
+      <div class="price">
+        R$ 64,99
+      </div>
+
+      <button
+        class="buy-btn"
+        onclick="selectPackage('1.200 Diamantes', 'R$ 64,99')"
+      >
+        COMPRAR AGORA
+      </button>
+
+    </div>
+
+
+    <div class="package popular">
+
+      <div class="badge">
+        MAIS VENDIDO
+      </div>
+
+      <div class="diamond">
+        💎
+      </div>
+
+      <h3>
+        2.000 Diamantes
+      </h3>
+
+      <div class="bonus">
+        🎁 +600 de bônus
+      </div>
+
+      <div class="price">
+        R$ 99,99
+      </div>
+
+      <button
+        class="buy-btn"
+        onclick="selectPackage('2.600 Diamantes', 'R$ 99,99')"
+      >
+        COMPRAR AGORA
+      </button>
+
+    </div>
+
+
+    <div class="package">
+
+      <div class="diamond">
+        💎
+      </div>
+
+      <h3>
+        5.000 Diamantes
+      </h3>
+
+      <div class="bonus">
+        🎁 +1.700 de bônus
+      </div>
+
+      <div class="price">
+        R$ 229,99
+      </div>
+
+      <button
+        class="buy-btn"
+        onclick="selectPackage('6.700 Diamantes', 'R$ 229,99')"
+      >
+        COMPRAR AGORA
+      </button>
+
+    </div>
+
+
+    <div class="package">
+
+      <div class="diamond">
+        💎
+      </div>
+
+      <h3>
+        20.000 Diamantes
+      </h3>
+
+      <div class="bonus">
+        🎁 +6.880 de bônus
+      </div>
+
+      <div class="price">
+        R$ 899,99
+      </div>
+
+      <button
+        class="buy-btn"
+        onclick="selectPackage('26.880 Diamantes', 'R$ 899,99')"
+      >
+        COMPRAR AGORA
+      </button>
+
+    </div>
+
+
+  </section>
+
+
+  <section class="order-section">
+
+
+    <div class="card">
+
+      <h2>
+        🛒 Faça seu pedido
+      </h2>
+
+      <form id="orderForm">
+
+
+        <label for="name">
+          Seu nome
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Digite seu nome"
+          required
+        >
+
+
+        <label for="whatsapp">
+          Seu WhatsApp
+        </label>
+
+        <input
+          type="tel"
+          id="whatsapp"
+          placeholder="(00) 00000-0000"
+          required
+        >
+
+
+        <label for="playerId">
+          ID do Free Fire
+        </label>
+
+        <input
+          type="text"
+          id="playerId"
+          placeholder="Digite seu ID corretamente"
+          required
+        >
+
+
+        <label for="package">
+          Pacote escolhido
+        </label>
+
+        <select
+          id="package"
+          required
+        >
+
+          <option value="">
+            Selecione um pacote
+          </option>
+
+          <option value="1.200 Diamantes|64.99">
+            1.200 Diamantes — R$ 64,99
+          </option>
+
+          <option value="2.600 Diamantes|99.99">
+            2.600 Diamantes — R$ 99,99
+          </option>
+
+          <option value="6.700 Diamantes|229.99">
+            6.700 Diamantes — R$ 229,99
+          </option>
+
+          <option value="26.880 Diamantes|899.99">
+            26.880 Diamantes — R$ 899,99
+          </option>
+
+        </select>
+
+
+        <button
+          class="submit-btn"
+          type="submit"
+        >
+          💬 FINALIZAR PEDIDO NO WHATSAPP
+        </button>
+
+
+      </form>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>
+        📋 Resumo do pedido
+      </h2>
+
+
+      <div class="summary">
+
+
+        <div class="summary-row">
+
+          <span>
+            Cliente
+          </span>
+
+          <strong id="summaryName">
+            —
+          </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+          <span>
+            ID
+          </span>
+
+          <strong id="summaryId">
+            —
+          </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+          <span>
+            Pacote
+          </span>
+
+          <strong id="summaryPackage">
+            —
+          </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+          <span>
+            Valor
+          </span>
+
+          <strong
+            class="total"
+            id="summaryPrice"
+          >
+            R$ 0,00
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="pix-info">
+
+        💰 <strong>Pagamento via Pix</strong>
+
+        <br><br>
+
+        Após enviar seu pedido pelo WhatsApp,
+        nossa equipe informará a chave Pix para pagamento.
+
+        <br><br>
+
+        A recarga será realizada após a confirmação
+        do pagamento.
+
+      </div>
+
+
+      <div class="notice">
+
+        ⚠️ <strong>Atenção:</strong>
+
+        Confira cuidadosamente o ID informado.
+        A recarga será realizada no ID enviado pelo cliente.
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+  <section class="steps">
+
+
+    <div class="section-title">
+
+      <h2>
+        Como funciona?
+      </h2>
+    
+    </div>
+
+
+    <div class="steps-grid">
+
+
+      <div class="step">
+
+        <div class="step-icon">
+          💎
+        </div>
+
+        <strong>
+          1. Escolha
+        </strong>
+
+        <p>
+          Escolha seu pacote de diamantes.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-icon">
+          🆔
+        </div>
+
+        <strong>
+          2. Informe o ID
+        </strong>
+
+        <p>
+          Digite corretamente o ID da sua conta.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-icon">
+          💬
+        </div>
+
+        <strong>
+          3. Fale conosco
+        </strong>
+
+        <p>
+          Envie seu pedido pelo WhatsApp.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-icon">
+          ⚡
+        </div>
+
+        <strong>
+          4. Receba
+        </strong>
+
+        <p>
+          Após o pagamento, aguarde a realização da recarga.
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+</main>
+
+
+<footer>
+
+  <strong>
+    DIAMANTES CAPONE
+  </strong>
+
+  <br><br>
+
+  Recargas digitais para jogadores.
+
+  <br>
+
+  Atendimento via WhatsApp.
+
+  <br><br>
+
+  © 2026 Diamantes Capone.
+  Todos os direitos reservados.
+
+  <br><br>
+
+  Esta página não representa necessariamente uma loja oficial
+  ou afiliada ao desenvolvedor do jogo.
+
+</footer>
+
+
+<script>
+
+
+  /*
+  =====================================================
+  CONFIGURAÇÃO DO WHATSAPP DA LOJA
+  =====================================================
+
+  IMPORTANTE:
+
+  Coloque aqui o número do WhatsApp da Diamantes Capone.
+
+  Use o formato:
+
+  55 + DDD + número
+
+  Exemplo fictício:
+
+  5564999999999
+
+  NÃO coloque:
+  +
+  espaços
+  parênteses
+  traços
+
+  =====================================================
+  */
+
+
+  const NUMERO_WHATSAPP =
+    "5500000000000";
+
+
+  const packageSelect =
+    document.getElementById("package");
+
+
+  const summaryName =
+    document.getElementById("summaryName");
+
+
+  const summaryId =
+    document.getElementById("summaryId");
+
+
+  const summaryPackage =
+    document.getElementById("summaryPackage");
+
+
+  const summaryPrice =
+    document.getElementById("summaryPrice");
+
+
+  function selectPackage(
+    packageName,
+    price
+  ) {
+
+
+    const options =
+      packageSelect.options;
+
+
+    for (
+      let i = 0;
+      i < options.length;
+      i++
+    ) {
+
+
+      if (
+        options[i].text.includes(
+          packageName
+        )
+      ) {
+
+
+        packageSelect.selectedIndex =
+          i;
+
+
+        break;
+
+
+      }
+
+
+    }
+
+
+    document
+      .querySelector(
+        ".order-section"
+      )
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+
+    updateSummary();
+
+
+  }
+
+
+  function updateSummary() {
+
+
+    const name =
+      document.getElementById(
+        "name"
+      ).value || "—";
+
+
+    const id =
+      document.getElementById(
+        "playerId"
+      ).value || "—";
+
+
+    const selected =
+      packageSelect.value;
+
+
+    summaryName.textContent =
+      name;
+
+
+    summaryId.textContent =
+      id;
+
+
+    if (selected) {
+
+
+      const data =
+        selected.split("|");
+
+
+      summaryPackage.textContent =
+        data[0];
+
+
+      summaryPrice.textContent =
+        "R$ " +
+        parseFloat(
+          data[1]
+        )
+        .toFixed(2)
+        .replace(
+          ".",
+          ","
+        );
+
+
+    } else {
+
+
+      summaryPackage.textContent =
+        "—";
+
+
+      summaryPrice.textContent =
+        "R$ 0,00";
+
+
+    }
+
+
+  }
+
+
+  document
+    .getElementById("name")
+    .addEventListener(
+      "input",
+      updateSummary
+    );
+
+
+  document
+    .getElementById("playerId")
+    .addEventListener(
+      "input",
+      updateSummary
+    );
+
+
+  packageSelect
+    .addEventListener(
+      "change",
+      updateSummary
+    );
+
+
+  document
+    .getElementById("orderForm")
+    .addEventListener(
+      "submit",
+      function(event) {
+
+
+        event.preventDefault();
+
+
+        const name =
+          document.getElementById(
+            "name"
+          ).value.trim();
+
+
+        const whatsapp =
+          document.getElementById(
+            "whatsapp"
+          ).value.trim();
+
+
+        const playerId =
+          document.getElementById(
+            "playerId"
+          ).value.trim();
+
+
+        const selected =
+          packageSelect.value;
+
+
+        if (
+          !name ||
+          !whatsapp ||
+          !playerId ||
+          !selected
+        ) {
+
+
+          alert(
+            "Preencha todos os campos antes de continuar."
+          );
+
+
+          return;
+
+
+        }
+
+
+        const data =
+          selected.split("|");
+
+
+        const packageName =
+          data[0];
+
+
+        const price =
+          data[1];
+
+
+        const message =
+
+          "Olá! Quero fazer uma compra na Diamantes Capone.%0A%0A" +
+
+          "👤 Nome: " +
+          encodeURIComponent(
+            name
+          ) +
+
+          "%0A" +
+
+          "📱 WhatsApp: " +
+          encodeURIComponent(
+            whatsapp
+          ) +
+
+          "%0A" +
+
+          "🆔 ID do Free Fire: " +
+          encodeURIComponent(
+            playerId
+          ) +
+
+          "%0A" +
+
+          "💎 Pacote: " +
+          encodeURIComponent(
+            packageName
+          ) +
+
+          "%0A" +
+
+          "💰 Valor: R$ " +
+          encodeURIComponent(
+            price.replace(
+              ".",
+              ","
+            )
+          ) +
+
+          "%0A%0A" +
+
+          "Aguardo as instruções para pagamento via Pix.";
+
+
+        const whatsappURL =
+
+          "https://wa.me/" +
+
+          NUMERO_WHATSAPP +
+
+          "?text=" +
+
+          message;
+
+
+        window.open(
+          whatsappURL,
+          "_blank"
+        );
+
+
+      }
+    );
+
+
+</script>
+
+</body>
+</html>
