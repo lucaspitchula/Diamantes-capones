@@ -58,12 +58,18 @@
       font-size: 14px;
     }
 
-    .hero {
-      text-align: center;
-      padding: 55px 20px 35px;
-      background:
-        radial-gradient(circle at top, #14333b 0%, #080808 55%);
-    }
+  .hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 55px 20px;
+
+  background: url("hero.jpg") center center no-repeat;
+  background-size: cover;
+}
 
     .hero h1 {
       font-size: clamp(30px, 7vw, 58px);
